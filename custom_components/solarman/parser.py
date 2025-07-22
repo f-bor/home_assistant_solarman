@@ -38,6 +38,8 @@ class ParameterParser:
             self.try_parse_time(rawData,definition, start, length)
         elif rule == 10:
             self.try_parse_raw(rawData,definition, start, length)
+        elif rule == 11:
+            self.try_parse_multipl(rawData,definition, start, length)
         return
     
     def do_validate(self, title, value, rule):
@@ -191,6 +193,22 @@ class ParameterParser:
             self.result[title] = value
         return
     
+    def try_parse_multipl (self, rawData, definition, start, length):
+        title = definition['name']
+        value = definition['scale'] if 'scale' in definition else 1
+        found = True
+        for r in definition['registers']:
+            index = r - start   # get the decimal value of the register'
+            if (index >= 0) and (index < length):
+                temp = rawData[index]
+                value = value * temp
+            else:   
+                found = False
+
+        if found:
+            self.result[title] = value
+        return
+            
     def try_parse_version (self, rawData, definition, start, length):
         title = definition['name']         
         found = True
