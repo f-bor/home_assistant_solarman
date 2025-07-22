@@ -88,7 +88,7 @@ parameters:
       class: "power"
       state_class: "measurement"
       uom: "W"     
-      scale: 10
+      scale: 0.01
       rule: 11                      
       registers: [0x006D, 0x006E]
       icon: 'mdi:solar-power'
@@ -97,7 +97,7 @@ parameters:
       class: "power"              
       state_class: "measurement"
       uom: "W"      
-      scale: 10
+      scale: 0.01
       rule: 11                          
       registers: [0x006F, 0x0070]
       icon: 'mdi:solar-power'
@@ -106,7 +106,7 @@ parameters:
       class: "power"
       state_class: "measurement"
       uom: "W"      
-      scale: 10
+      scale: 0.01
       rule: 11                          
       registers: [0x0071, 0x0072]
       icon: 'mdi:solar-power'
@@ -115,7 +115,7 @@ parameters:
       class: "power"
       state_class: "measurement"
       uom: "W"      
-      scale: 10
+      scale: 0.01
       rule: 11                          
       registers: [0x0073, 0x0074]
       icon: 'mdi:solar-power'
